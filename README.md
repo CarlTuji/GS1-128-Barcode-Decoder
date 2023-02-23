@@ -26,3 +26,5 @@ include the script in your project and create a new object like this:
   netWeightKgs.value = barcode.NetWeightKgs;
 </script>
 ```
+
+Still need little fixes, everyone is welcome to make it better!
