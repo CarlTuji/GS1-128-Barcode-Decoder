@@ -22,36 +22,48 @@ class codeGS1Decoder {
   }
 
   getLotNumber = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const reLotNumber=/(10)([0-9]{1,20})?/g;
     var LotNumber = reLotNumber.exec(barcode);
     return (LotNumber)?LotNumber[2]:'';
   }
 
   getSerialNumber = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const reSerialNumber=/(21)([0-9]{1,20})?/g;
     var SerialNumber = reSerialNumber.exec(barcode);
     return (SerialNumber)?SerialNumber[2]:'';
   }
 
   getProductionDate = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const reProductionDate=/(11)([0-9]{6})?/g;
     var productionDate = reProductionDate.exec(barcode);
     return (productionDate)?productionDate[2]:'';
   }
 
   getPackingDate = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const rePackingDate=/(13)([0-9]{6})?/g;
     var packingDate = rePackingDate.exec(barcode);
     return (packingDate)?packingDate[2]:'';
   }
 
   getSellByDate = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const reSellByDate=/(15)([0-9]{6})?/g;
     var SellByDate = reSellByDate.exec(barcode);
     return (SellByDate)?SellByDate[2]:'';
   }
 
   getExpirationDate = ( barcode ) => {
+    barcode = barcode.replace('01'+this.GTIN,'');
+    barcode = barcode.replace('/(3[1-4]{1}0[0-4]{1})([0-9]{6})?/g', '');
     const reExpiration=/(17)([0-9]{6})?/g;
     var expiration = reExpiration.exec(barcode);
     return (expiration)?expiration[2]:'';
