@@ -18,7 +18,7 @@ class codeGS1Decoder {
   getGTIN = ( barcode ) => {
     const rePID=/^(01)([0-9]{14})/;
     var pID = rePID.exec(barcode);
-    return (pID)?pID[1]:'';
+    return (pID)?pID[2]:'';
   }
 
   getLotNumber = ( barcode ) => {
