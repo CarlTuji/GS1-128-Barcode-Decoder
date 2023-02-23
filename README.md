@@ -2,7 +2,7 @@
 Library to decode Code GS1 Barcodes
 
 sample GS1-128 Barcode
-(01)99331079003789(3102)002835(13)221130(21)203788340029
+> (01)99331079003789(3102)002835(13)221130(21)203788340029
 
 This script is usefull if you want to extract the information in a GS1 Barcode.
 
@@ -13,6 +13,7 @@ A GS1-128 barcode is not just an ordinary number. It contains a wealth of import
 The GS1-128 label helps a shipper (such as a supplier or 3PL) communicate with the buyer (such as a retailer or distributor) about the contents of a shipment.
 
 include the script in your project and create a new object like this:
+```
 <script src="codegs1decoder.js"></script>
 <script>
   let barcode = new codeGS1Decoder( document.querySelector('#gs1-128BarcodeHolder').value );
@@ -24,3 +25,4 @@ include the script in your project and create a new object like this:
   packingDate.value = barcode.PackingDate;
   netWeightKgs.value = barcode.NetWeightKgs;
 </script>
+```
